@@ -14,6 +14,8 @@ namespace LINQ.Przyklady
             ShowBigFileWithoutLinq(PATH);
             Console.WriteLine("************************************");
             ShowBigFileWithLinqQuerySyntax(PATH);
+            Console.WriteLine("************************************");
+            ShowBigFileWithLinqMethodSyntax(PATH);
         }
 
         private void ShowBigFileWithLinqQuerySyntax(string path)
@@ -22,6 +24,18 @@ namespace LINQ.Przyklady
                         orderby file.Length descending
                         select file;
             foreach (var file in query.Take(5))
+            {
+                Console.WriteLine($"{file.Name,-24} : {file.Length,1:N0}");
+            }
+        }
+
+        private void ShowBigFileWithLinqMethodSyntax(string path)
+        {
+            var query = new DirectoryInfo(path).GetFiles()
+                .OrderByDescending(x => x.Length)
+                .Take(5);
+
+            foreach (var file in query)
             {
                 Console.WriteLine($"{file.Name,-24} : {file.Length,1:N0}");
             }
