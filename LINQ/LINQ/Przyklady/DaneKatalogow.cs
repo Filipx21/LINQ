@@ -18,6 +18,7 @@ namespace LINQ.Przyklady
             ShowBigFileWithLinqMethodSyntax(PATH);
         }
 
+        #region LINQ 
         private void ShowBigFileWithLinqQuerySyntax(string path)
         {
             var query = from file in new DirectoryInfo(path).GetFiles()
@@ -41,7 +42,9 @@ namespace LINQ.Przyklady
                 Console.WriteLine($"{file.Name,-24} : {file.Length,1:N0}");
             }
         }
+        #endregion LINQ
 
+        #region OLD APPROACH
         private void ShowBigFileWithoutLinq(string path)
         {
             DirectoryInfo directory = new DirectoryInfo(path);
@@ -64,4 +67,5 @@ namespace LINQ.Przyklady
             return y.Length.CompareTo(x.Length);
         }
     }
+    #endregion OLD APPROACH
 }
