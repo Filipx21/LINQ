@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LINQ.Przyklady
 {
@@ -14,7 +12,19 @@ namespace LINQ.Przyklady
         public void Start()
         {
             ShowBigFileWithoutLinq(PATH);
+            Console.WriteLine("************************************");
+            ShowBigFileWithLinqQuerySyntax(PATH);
+        }
 
+        private void ShowBigFileWithLinqQuerySyntax(string path)
+        {
+            var query = from file in new DirectoryInfo(path).GetFiles()
+                        orderby file.Length descending
+                        select file;
+            foreach (var file in query.Take(5))
+            {
+                Console.WriteLine($"{file.Name,-24} : {file.Length,1:N0}");
+            }
         }
 
         private void ShowBigFileWithoutLinq(string path)
@@ -24,10 +34,10 @@ namespace LINQ.Przyklady
 
             Array.Sort(files, new FileInfoComparer());
 
-            for(var i = 0; i < files.Length; i++)
+            for (var i = 0; i < 5; i++)
             {
                 FileInfo file = files[i];
-                Console.WriteLine($"{file.Name, -24} : {file.Length, 1:N0}");
+                Console.WriteLine($"{file.Name,-24} : {file.Length,1:N0}");
             }
         }
     }
