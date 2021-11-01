@@ -71,6 +71,10 @@ namespace Funkcje
             Console.WriteLine(@"Potegowanie: {0}", Potegowanie(2));
             Console.WriteLine(@"Dodawanie: {0}", Dodawanie(2, 2));
             #endregion Func
+            #region Action
+            Action<int> Wyswietl = x => Console.WriteLine(@"Action: {0}", x);
+            Wyswietl(Dodawanie(10, 22));
+            #endregion Action
             #endregion Lambda
 
             Console.ReadLine();
