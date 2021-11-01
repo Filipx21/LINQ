@@ -77,9 +77,11 @@ namespace Funkcje
             #endregion Action
             #endregion Lambda
 
-            foreach (var person in programmers
+            var methodSyntax = programmers
                 .Where(e => e.FirstName.Length == 5)
-                .OrderByDescending(e => e.FirstName))
+                .OrderByDescending(e => e.FirstName);
+
+            foreach (var person in methodSyntax)
             {
                 Console.WriteLine(person.FirstName);
             }
