@@ -84,6 +84,16 @@ namespace Funkcje
                 Console.WriteLine(person.FirstName);
             }
 
+            var querySyntax = from programmer in programmers
+                              where programmer.FirstName.Length == 5
+                              orderby programmer.FirstName descending
+                              select programmer;
+
+            foreach (var programmer in querySyntax)
+            {
+                Console.WriteLine(programmer.FirstName);
+            }
+
             Console.ReadLine();
         }
 
