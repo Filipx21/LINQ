@@ -19,5 +19,10 @@ namespace Funkcje.Infrastructure
 
             return counter;
         }
+
+        public static int CountChars(this string word)
+        {
+            return word.ToArray().Count();
+        }
     }
 }

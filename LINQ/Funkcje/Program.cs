@@ -1,4 +1,5 @@
-﻿using Funkcje.Models;
+﻿using Funkcje.Infrastructure;
+using Funkcje.Models;
 using System;
 using System.Collections.Generic;
 //using System.Linq;
@@ -35,6 +36,13 @@ namespace Funkcje
             {
                 Console.WriteLine(enumerator.Current.FirstName);
             }
+
+            Console.WriteLine("Dodatkowe zadanie");
+            string word = "Annapurna";
+            int result = word.CountChars();
+            Console.WriteLine(@"Slowo: {0}, ilosc znaków: {1}", word, result);
+
+
 
             Console.ReadLine();
         }
