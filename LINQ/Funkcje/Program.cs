@@ -13,7 +13,7 @@ namespace Funkcje
         static void Main(string[] args)
         {
             #region Dane
-            IEnumerable<Employee> programmers = new Employee[]
+            var programmers = new Employee[]
             {
                 new Employee { EmployeeId = 1, FirstName = "Marcin", LastName = "Nowak"},
                 new Employee { EmployeeId = 2, FirstName = "Tomek", LastName = "Kowal"},
@@ -21,7 +21,7 @@ namespace Funkcje
                 new Employee { EmployeeId = 4, FirstName = "Adam", LastName = "Wrona"}
             };
 
-            IEnumerable<Employee> drivers = new List<Employee>()
+            var drivers = new List<Employee>()
             {
                 new Employee { EmployeeId = 5, FirstName = "Olek", LastName = "Sroka"},
                 new Employee { EmployeeId = 6, FirstName = "Pawel", LastName = "Wrobel"},
@@ -66,16 +66,23 @@ namespace Funkcje
             //}
             #endregion Funkcja Lambda
             #region Func
-            Func<int, int> Potegowanie = x => x * x;
-            Func<int, int, int> Dodawanie = (x, y) => x + y;
-            Console.WriteLine(@"Potegowanie: {0}", Potegowanie(2));
-            Console.WriteLine(@"Dodawanie: {0}", Dodawanie(2, 2));
+            //Func<int, int> Potegowanie = x => x * x;
+            //Func<int, int, int> Dodawanie = (x, y) => x + y;
+            //Console.WriteLine(@"Potegowanie: {0}", Potegowanie(2));
+            //Console.WriteLine(@"Dodawanie: {0}", Dodawanie(2, 2));
             #endregion Func
             #region Action
-            Action<int> Wyswietl = x => Console.WriteLine(@"Action: {0}", x);
-            Wyswietl(Dodawanie(10, 22));
+            //Action<int> Wyswietl = x => Console.WriteLine(@"Action: {0}", x);
+            //Wyswietl(Dodawanie(10, 22));
             #endregion Action
             #endregion Lambda
+
+            foreach (var person in programmers
+                .Where(e => e.FirstName.Length == 5)
+                .OrderByDescending(e => e.FirstName))
+            {
+                Console.WriteLine(person.FirstName);
+            }
 
             Console.ReadLine();
         }
