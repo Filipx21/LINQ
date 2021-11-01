@@ -60,7 +60,7 @@ namespace Funkcje
             //}
             #endregion Metoda anonimowa
             #region Funkcja Lambda
-            foreach (var person in programmers.Where(x => x.FirstName.StartsWith("M")))//<- Metoda anonimowa
+            foreach (var person in programmers.Where(x => x.FirstName.StartsWith("M")))//<- Lambda
             {
                 Console.WriteLine(person.FirstName);
             }
