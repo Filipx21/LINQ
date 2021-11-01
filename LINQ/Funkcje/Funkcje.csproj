@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Lambda.cs" />
     <Compile Include="Infrastructure\MyFunctionLinq.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Program.cs" />

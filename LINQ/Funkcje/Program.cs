@@ -12,6 +12,7 @@ namespace Funkcje
     {
         static void Main(string[] args)
         {
+            #region Dane
             IEnumerable<Employee> programmers = new Employee[]
             {
                 new Employee { EmployeeId = 1, FirstName = "Marcin", LastName = "Nowak"},
@@ -26,23 +27,28 @@ namespace Funkcje
                 new Employee { EmployeeId = 6, FirstName = "Pawel", LastName = "Wrobel"},
                 new Employee { EmployeeId = 7, FirstName = "Marek", LastName = "Piatek"}
             };
+            #endregion Dane
+            #region Enumerator
+            //IEnumerator<Employee> enumerator = drivers.GetEnumerator();
 
-            var count = programmers.Count();
-            Console.WriteLine(count);
+            //while(enumerator.MoveNext())
+            //{
+            //    Console.WriteLine(enumerator.Current.FirstName);
+            //}
+            #endregion Enumerator
+            #region Metoda roz
+            //var count = programmers.Count();
+            //Console.WriteLine(count);
 
-            IEnumerator<Employee> enumerator = drivers.GetEnumerator();
-
-            while(enumerator.MoveNext())
-            {
-                Console.WriteLine(enumerator.Current.FirstName);
-            }
-
-            Console.WriteLine("Dodatkowe zadanie");
-            string word = "Annapurna";
-            int result = word.CountChars();
-            Console.WriteLine(@"Slowo: {0}, ilosc znaków: {1}", word, result);
+            //Console.WriteLine("Dodatkowe zadanie");
+            //string word = "Annapurna";
+            //int result = word.CountChars();
+            //Console.WriteLine(@"Slowo: {0}, ilosc znaków: {1}", word, result);
+            #endregion Metoda roz
+            #region Lambda
 
 
+            #endregion Lambda
 
             Console.ReadLine();
         }
