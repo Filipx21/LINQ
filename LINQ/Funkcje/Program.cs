@@ -52,6 +52,13 @@ namespace Funkcje
                 Console.WriteLine(person.FirstName);
             }
             #endregion Metoda nazwana
+            #region Metoda anonimowa
+            foreach (var person in programmers.Where(
+                delegate (Employee employee) { return employee.FirstName.StartsWith("M"); }))//<- Metoda anonimowa
+            {
+                Console.WriteLine(person.FirstName);
+            }
+            #endregion Metoda anonimowa
             #endregion Lambda
 
             Console.ReadLine();
