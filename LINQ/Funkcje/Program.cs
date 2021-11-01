@@ -26,6 +26,9 @@ namespace Funkcje
                 new Employee { EmployeeId = 7, FirstName = "Marek", LastName = "Piatek"}
             };
 
+            var count = programmers.Count();
+            Console.WriteLine(count);
+
             IEnumerator<Employee> enumerator = drivers.GetEnumerator();
 
             while(enumerator.MoveNext())
