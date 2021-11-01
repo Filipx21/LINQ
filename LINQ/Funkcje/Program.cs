@@ -2,7 +2,7 @@
 using Funkcje.Models;
 using System;
 using System.Collections.Generic;
-//using System.Linq;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,11 +46,20 @@ namespace Funkcje
             //Console.WriteLine(@"Slowo: {0}, ilosc znaków: {1}", word, result);
             #endregion Metoda roz
             #region Lambda
-
-
+            #region Metoda nazwana
+            foreach(var person in programmers.Where(RozpoczynaNaM))//<- Metoda nazwana
+            {
+                Console.WriteLine(person.FirstName);
+            }
+            #endregion Metoda nazwana
             #endregion Lambda
 
             Console.ReadLine();
+        }
+
+        private static bool RozpoczynaNaM(Employee employee)
+        {
+            return employee.FirstName.StartsWith("M");
         }
     }
 }
