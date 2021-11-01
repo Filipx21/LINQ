@@ -60,15 +60,22 @@ namespace Funkcje
             //}
             #endregion Metoda anonimowa
             #region Funkcja Lambda
-            foreach (var person in programmers.Where(x => x.FirstName.StartsWith("M")))//<- Lambda
-            {
-                Console.WriteLine(person.FirstName);
-            }
+            //foreach (var person in programmers.Where(x => x.FirstName.StartsWith("M")))//<- Lambda
+            //{
+            //    Console.WriteLine(person.FirstName);
+            //}
             #endregion Funkcja Lambda
+            #region Func
+            Func<int, int> Potegowanie = x => x * x;
+            Func<int, int, int> Dodawanie = (x, y) => x + y;
+            Console.WriteLine(@"Potegowanie: {0}", Potegowanie(2));
+            Console.WriteLine(@"Dodawanie: {0}", Dodawanie(2, 2));
+            #endregion Func
             #endregion Lambda
 
             Console.ReadLine();
         }
+
 
         private static bool RozpoczynaNaM(Employee employee)
         {
