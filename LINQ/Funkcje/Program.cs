@@ -47,18 +47,24 @@ namespace Funkcje
             #endregion Metoda roz
             #region Lambda
             #region Metoda nazwana
-            foreach(var person in programmers.Where(RozpoczynaNaM))//<- Metoda nazwana
-            {
-                Console.WriteLine(person.FirstName);
-            }
+            //foreach(var person in programmers.Where(RozpoczynaNaM))//<- Metoda nazwana
+            //{
+            //    Console.WriteLine(person.FirstName);
+            //}
             #endregion Metoda nazwana
             #region Metoda anonimowa
-            foreach (var person in programmers.Where(
-                delegate (Employee employee) { return employee.FirstName.StartsWith("M"); }))//<- Metoda anonimowa
+            //foreach (var person in programmers.Where(
+            //    delegate (Employee employee) { return employee.FirstName.StartsWith("M"); }))//<- Metoda anonimowa
+            //{
+            //    Console.WriteLine(person.FirstName);
+            //}
+            #endregion Metoda anonimowa
+            #region Funkcja Lambda
+            foreach (var person in programmers.Where(x => x.FirstName.StartsWith("M")))//<- Metoda anonimowa
             {
                 Console.WriteLine(person.FirstName);
             }
-            #endregion Metoda anonimowa
+            #endregion Funkcja Lambda
             #endregion Lambda
 
             Console.ReadLine();
