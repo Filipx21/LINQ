@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ - Wprowadzenie", "LINQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funkcje", "Funkcje\Funkcje.csproj", "{9EF8597D-3C16-4A3B-99B4-99A4741E4CD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zapytania", "Zapytania\Zapytania.csproj", "{FBFF3F4D-9D99-4021-91C5-5A995367DA44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EF8597D-3C16-4A3B-99B4-99A4741E4CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EF8597D-3C16-4A3B-99B4-99A4741E4CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EF8597D-3C16-4A3B-99B4-99A4741E4CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBFF3F4D-9D99-4021-91C5-5A995367DA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFF3F4D-9D99-4021-91C5-5A995367DA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFF3F4D-9D99-4021-91C5-5A995367DA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFF3F4D-9D99-4021-91C5-5A995367DA44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
