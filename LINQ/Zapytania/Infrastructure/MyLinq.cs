@@ -7,7 +7,6 @@ namespace Zapytania.Infrastructure
     {
         public static IEnumerable<T> Filtr<T>(this IEnumerable<T> data, Func<T, bool> predicate)
         {
-
             foreach(var item in data)
             {
                 if(predicate(item))
@@ -15,7 +14,7 @@ namespace Zapytania.Infrastructure
                     yield return item;
                 }
             }
-
         }
+
     }
 }
