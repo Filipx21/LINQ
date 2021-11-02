@@ -23,6 +23,15 @@ namespace Zapytania
                 new Movie { Title = "Gladiator", Genre = "Dramat", Rating = 8.1f, Year = 2000}
             };
 
+            var query = movies.Filtr(x => x.Year > 2002);
+
+            foreach (var result in query)
+            {
+                Console.WriteLine(result.Title);
+            }
+
+            Console.ReadLine();
+ 
         }
     }
 }
