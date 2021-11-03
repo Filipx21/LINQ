@@ -22,7 +22,7 @@ namespace Zapytania
                 new Movie { Title = "Gladiator", Genre = "Dramat", Rating = 8.1f, Year = 2000}
             };
 
-            var query = movies.Filtr(x => x.Year > 2002).Take(1);
+            //var query = movies.Filtr(x => x.Year > 2002).Take(1);
 
             //var query = movies.Where(x => x.Year > 2002);
 
@@ -31,13 +31,19 @@ namespace Zapytania
             //    Console.WriteLine(result.Title);
             //}
 
+            var query = movies.Filtr(x => x.Year > 2002).ToList();
+
+            Console.WriteLine("#################################");
+            int count = query.Count();
+            Console.WriteLine(count);
+
             var enumerator = query.GetEnumerator();
-            while(enumerator.MoveNext())
+            while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current.Title);
             }
 
-            Console.ReadLine();
+            Console.ReadKey();
 
         }
     }
