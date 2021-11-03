@@ -78,6 +78,16 @@ namespace Zapytania
 
         static void Main(string[] args)
         {
+
+            var numbers = MyLinq.RandomNumbers()
+                .Where(x => x > 0.5)
+                .Take(10);
+
+            foreach(var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
             var movies = new List<Movie>
             {
                 new Movie { Title = "Siedem", Genre = "Thriller", Rating = 8.3f, Year = 1995},

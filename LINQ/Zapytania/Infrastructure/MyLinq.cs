@@ -16,5 +16,15 @@ namespace Zapytania.Infrastructure
             }
         }
 
+        public static IEnumerable<double> RandomNumbers()
+        {
+            var random = new Random();
+
+            while(true)
+            {
+                yield return random.NextDouble();
+            }
+        }
+
     }
 }
