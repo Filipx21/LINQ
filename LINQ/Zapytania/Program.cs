@@ -22,12 +22,19 @@ namespace Zapytania
                 new Movie { Title = "Gladiator", Genre = "Dramat", Rating = 8.1f, Year = 2000}
             };
 
-            //var query = movies.Filtr(x => x.Year > 2002);
-            var query = movies.Where(x => x.Year > 2002);
+            var query = movies.Filtr(x => x.Year > 2002).Take(1);
 
-            foreach (var result in query)
+            //var query = movies.Where(x => x.Year > 2002);
+
+            //foreach (var result in query)
+            //{
+            //    Console.WriteLine(result.Title);
+            //}
+
+            var enumerator = query.GetEnumerator();
+            while(enumerator.MoveNext())
             {
-                Console.WriteLine(result.Title);
+                Console.WriteLine(enumerator.Current.Title);
             }
 
             Console.ReadLine();
