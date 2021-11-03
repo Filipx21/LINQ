@@ -31,7 +31,17 @@ namespace Zapytania
             //    Console.WriteLine(result.Title);
             //}
 
-            var query = movies.Filtr(x => x.Year > 2002).ToList();
+            var query = Enumerable.Empty<Movie>();
+
+            try
+            {
+                query = movies.Filtr(x => x.Year > 2002);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
 
             Console.WriteLine("#################################");
             int count = query.Count();
