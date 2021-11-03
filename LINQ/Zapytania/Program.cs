@@ -31,7 +31,7 @@ namespace Zapytania
             }
 
             Console.ReadLine();
- 
+
         }
     }
 }
