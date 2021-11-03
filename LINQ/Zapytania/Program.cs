@@ -31,27 +31,18 @@ namespace Zapytania
             //    Console.WriteLine(result.Title);
             //}
 
-            var query = Enumerable.Empty<Movie>();
-
-            try
-            {
-                query = movies.Filtr(x => x.Year > 2002);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-           
+            var query = movies.Filtr(x => x.Year > 2002);
 
             Console.WriteLine("#################################");
             int count = query.Count();
             Console.WriteLine(count);
 
-            var enumerator = query.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                Console.WriteLine(enumerator.Current.Title);
-            }
+
+            //var enumerator = query.GetEnumerator();
+            //while (enumerator.MoveNext())
+            //{
+            //    Console.WriteLine(enumerator.Current.Title);
+            //}
 
             Console.ReadKey();
 

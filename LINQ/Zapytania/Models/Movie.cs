@@ -16,7 +16,6 @@ namespace Zapytania.Models
         public int Year {
             get 
             {
-                throw new Exception("Error");
                 Console.WriteLine($"Zwraca {_Year} i {Title}");
                 return _Year;  
             }
