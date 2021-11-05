@@ -11,7 +11,7 @@ namespace TakO
         static void Main(string[] args)
         {
             var input = new GenerateValue();
-            var inputs = input.InputData();
+            var inputs = input.InputData(5);
             
             Console.WriteLine("Posortowana lista");
             foreach (var i in inputs.OrderByDescending(x => x.Weight))
@@ -25,18 +25,17 @@ namespace TakO
 
     public interface IInput
     {
-        List<Input> InputData();
+        List<Input> InputData(int loop);
     }
 
     public class GenerateValue : IInput
     {
-        private const int LOOP = 5;
 
-        public List<Input> InputData()
+        public List<Input> InputData(int loop)
         {
             List<Input> data = new List<Input>();
 
-            for (var x = 0; x < LOOP; x++)
+            for (var x = 0; x < loop; x++)
             {
                 try
                 {
